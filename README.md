@@ -138,31 +138,31 @@ Relationships are implemented using foreign keys.
 ## Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.PNG)
 
 ### Students Page
-![Students](screenshots/students.png)
+![Students](screenshots/students.PNG)
 
 ### Teachers Page
-![Teachers](screenshots/teachers.png)
+![Teachers](screenshots/teachers.PNG)
 
 ### Admins Page
-![Admins](screenshots/admins.png)
+![Admins](screenshots/admins.PNG)
 
 ### Courses Page
-![Courses](screenshots/courses.png)
+![Courses](screenshots/courses.PNG)
 
 ### Lessons Page
-![Lessons](screenshots/lessons.png)
+![Lessons](screenshots/lessons.PNG)
 
 ### Enrollments Page
-![Enrollments](screenshots/enrollments.png)
+![Enrollments](screenshots/enrollments.PNG)
 
 ### Progress Tracking Page
-![Progress](screenshots/progress.png)
+![Progress](screenshots/progress.PNG)
 
 ### Certificates Page
-![Certificates](screenshots/certificates.png)
+![Certificates](screenshots/certificates.PNG)
 
 ---
 

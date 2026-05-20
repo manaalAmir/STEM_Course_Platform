@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lessons</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="lessons">
+<div class="sidebar">
+<h2>STEM</h2>
+<a href="home.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="course.html">Courses</a>
+<a href="teacher.html">Teachers</a>
+<a href="admin.html">Admins</a>
+<a href="lesson.html" class="active">Lessons</a>
+<a href="enrollment.html">Enrollments</a>
+<a href="progress.html">Progress</a>
+<a href="certificate.html">Certificates</a>
+</div>
+<div class="main">
+<div class="header">Lessons</div>
+<div class="card">
+<h3>Add / Edit Lesson</h3>
+<form id="lesson-form">
+<input type="hidden" id="lesson-id">
+<input id="lesson-num" placeholder="Lesson Number" type="number" required>
+<input id="lesson-title" placeholder="Lesson Title" required>
+<textarea id="lesson-desc" placeholder="Description"></textarea>
+<select id="lesson-type">
+  <option value="Video">Video</option>
+  <option value="Reading">Reading</option>
+  <option value="Quiz">Quiz</option>
+  <option value="Lab">Lab</option>
+  <option value="Assignment">Assignment</option>
+</select>
+<input id="lesson-duration" placeholder="Duration (minutes)" type="number">
+<select id="lesson-course"><option value="">-- Select Course --</option></select>
+<button type="submit">Save Lesson</button>
+</form>
+</div>
+<div class="card">
+<h3>Lesson List</h3>
+<table>
+<thead><tr><th>ID</th><th>#</th><th>Title</th><th>Type</th><th>Course</th><th>Actions</th></tr></thead>
+<tbody id="lessons-tbody"><tr><td colspan="6">Loading...</td></tr></tbody>
+</table>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

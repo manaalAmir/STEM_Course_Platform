@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="certificates">
+    <div class="sidebar">
+        <h2>STEM</h2>
+        <a href="home.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="course.html">Courses</a>
+        <a href="teacher.html">Teachers</a>
+        <a href="admin.html">Admins</a>
+        <a href="lesson.html">Lessons</a>
+        <a href="enrollment.html">Enrollments</a>
+        <a href="progress.html">Progress</a>
+        <a href="certificate.html" class="active">Certificates</a> </div>
+    
+    <div class="main">
+        <div class="header">Certificates</div>
+        
+        <div class="card">
+            <h3>Certificate List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cert No.</th>
+                        <th>Student</th>
+                        <th>Course</th>
+                        <th>Issued By</th>
+                        <th>Issue Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="certificates-tbody">
+                    <tr><td colspan="7" style="text-align: center;">Loading certificates...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

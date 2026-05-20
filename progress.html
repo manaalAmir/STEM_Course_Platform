@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Progress</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="progress">
+<div class="sidebar">
+<h2>STEM</h2>
+<a href="home.html">Dashboard</a>
+<a href="students.html">Students</a>
+<a href="course.html">Courses</a>
+<a href="teacher.html">Teachers</a>
+<a href="admin.html">Admins</a>
+<a href="lesson.html">Lessons</a>
+<a href="enrollment.html">Enrollments</a>
+<a href="progress.html" class="active">Progress</a>
+<a href="certificate.html">Certificates</a>
+</div>
+<div class="main">
+<div class="header">Lesson Progress</div>
+<div class="card">
+<h3>Add / Edit Progress</h3>
+<form id="progress-form">
+<input type="hidden" id="progress-id">
+<select id="progress-enrollment"><option value="">-- Select Enrollment --</option></select>
+<select id="progress-lesson"><option value="">-- Select Lesson --</option></select>
+<input id="progress-score" placeholder="Score (0-100)" type="number" step="0.01" min="0" max="100">
+<input id="progress-time" placeholder="Time Spent (minutes)" type="number">
+<div style="display: flex; align-items: center; gap: 8px; margin: 12px 0; color: #94a3b8; font-size: 14px;">
+  <input id="progress-completed" type="checkbox" style="width: auto; margin: 0; cursor: pointer;">
+  <label for="progress-completed" style="cursor: pointer; user-select: none;">Mark as Completed</label>
+</div>
+<button type="submit">Save Progress</button>
+</form>
+</div>
+<div class="card">
+<h3>Progress List</h3>
+<table>
+<thead><tr><th>ID</th><th>Student</th><th>Lesson</th><th>Completed</th><th>Score</th><th>Time</th><th>Actions</th></tr></thead>
+<tbody id="progress-tbody"><tr><td colspan="7">Loading...</td></tr></tbody>
+</table>
+</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

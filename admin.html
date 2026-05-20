@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admins">
+    <div class="sidebar">
+        <h2>STEM</h2>
+        <a href="home.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="course.html">Courses</a>
+        <a href="teacher.html">Teachers</a>
+        <a href="admin.html" class="active">Admins</a>
+        <a href="lesson.html">Lessons</a>
+        <a href="enrollment.html">Enrollments</a>
+        <a href="progress.html">Progress</a>
+        <a href="certificate.html">Certificates</a>
+    </div>
+
+    <div class="main">
+        <div class="header">Admin Management</div>
+        
+        <div class="card">
+            <h3>Add / Edit Admin</h3>
+            <form id="admin-form">
+                <input type="hidden" id="admin-id">
+                
+                <input type="text" id="admin-name" placeholder="Full Name" required>
+                <input type="email" id="admin-email" placeholder="Email Address" required>
+                <input type="password" id="admin-pwd" placeholder="Password" required>
+                
+                <button type="button" onclick="togglePwd('admin-pwd', this)">Show Password</button>
+
+                <div style="flex-basis: 100%; height: 0;"></div>
+
+                <label style="color:#94a3b8;font-size:13px">Access Level</label>
+                <select id="admin-access">
+                    <option value="Owner" selected>Owner</option>
+                    <option value="Editor">Editor</option>
+                    <option value="Viewer">Viewer</option>
+                </select>
+            
+                <button type="submit">Save Admin</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>Registered Admin</h3>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Name</th><th>Email</th><th>Access Level</th><th>Status</th><th>Created At</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="admins-tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

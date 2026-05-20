@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teachers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="teachers"> <div class="sidebar">
+        <h2>STEM</h2>
+        <a href="home.html">Dashboard</a>
+        <a href="students.html">Students</a>
+        <a href="course.html">Courses</a>
+        <a href="teacher.html" class="active">Teachers</a>
+        <a href="admin.html">Admins</a>
+        <a href="lesson.html">Lessons</a>
+        <a href="enrollment.html">Enrollments</a>
+        <a href="progress.html">Progress</a>
+        <a href="certificate.html">Certificates</a>
+    </div>
+
+    <div class="main">
+        <div class="header">Teachers Management</div>
+        
+        <div class="card">
+            <h3>Add / Edit Teacher</h3>
+            <form id="teacher-form"> <input type="hidden" id="teacher-id"> 
+                <input type="text" id="teacher-name" placeholder="Full Name" required>
+                <input type="email" id="teacher-email" placeholder="Email Address" required>
+                <input type="password" id="teacher-pwd" placeholder="Password" required>
+                
+                <button type="button" onclick="togglePwd('teacher-pwd', this)">Show Password</button>
+
+                <div style="flex-basis: 100%; height: 0;"></div>
+                <label style="color:#94a3b8;font-size:13px">Hire Date</label>
+                <input type="date" id="teacher-hiredate" placeholder="Hire Date" required>
+                <input type="text" id="teacher-subject" placeholder="Subject Name" required>
+                
+                <button type="submit">Save Teacher</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>Registered Teachers</h3>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Name</th><th>Email</th><th>Subject Name</th><th>Hire Date</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="teachers-tbody"> </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

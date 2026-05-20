@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="dashboard">
+
+<div class="sidebar">
+    <h2>STEM</h2>
+    <a href="home.html" class="active">Dashboard</a>
+    <a href="students.html">Students</a>
+    <a href="course.html">Courses</a>
+    <a href="teacher.html">Teachers</a>
+    <a href="admin.html">Admins</a>
+    <a href="lesson.html">Lessons</a>
+    <a href="enrollment.html">Enrollments</a>
+    <a href="progress.html">Progress</a>
+    <a href="certificate.html">Certificates</a>
+</div>
+
+<div class="main">
+    <div class="header">Dashboard</div>
+    
+    <div class="metrics-grid">
+        <div class="card metric-card">
+            <span class="metric-icon">🎓</span>
+            <div>
+                <h3 id="stat-students">-</h3>
+                <p>Total Students</p>
+            </div>
+        </div>
+        <div class="card metric-card">
+            <span class="metric-icon">📚</span>
+            <div>
+                <h3 id="stat-courses">-</h3>
+                <p>Active Courses</p>
+            </div>
+        </div>
+        <div class="card metric-card">
+            <span class="metric-icon">📝</span>
+            <div>
+                <h3 id="stat-enrollments">-</h3>
+                <p>Total Enrollments</p>
+            </div>
+        </div>
+        <div class="card metric-card">
+            <span class="metric-icon">📜</span>
+            <div>
+                <h3 id="stat-certificates">-</h3>
+                <p>Certificates Issued</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-content-layout">
+        <div class="card activity-card">
+            <h3>Recent Platform Activity</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Enrolled Course</th>
+                        <th>Enrollment Date</th>
+                    </tr>
+                </thead>
+                <tbody id="recent-enrollments-list">
+                    <tr>
+                        <td colspan="3" style="text-align: center; color: #94a3b8;">Loading latest metrics...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card shortcuts-card">
+            <h3>Quick Actions</h3>
+            <div class="shortcut-buttons" style="display: flex; flex-direction: column; gap: 10px;">
+                <a href="certificate.html" class="shortcut-btn action-btn edit" style="text-align: center; display: block; padding: 12px; text-decoration: none;">🔍 View Certificates</a>
+                <a href="enrollment.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #334155; color: white;">➕ Manage Enrollments</a>
+                <a href="students.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #0284c7; color: white;">🧑‍🎓 Register New Student</a>
+                <a href="course.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #0f766e; color: white;">📖 Create New Course</a>
+                <a href="progress.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #4f46e5; color: white;">📊 Track Lesson Progress</a>
+                
+                <a href="teacher.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #b45309; color: white;">👨‍🏫 Onboard New Teacher</a>
+                <a href="lesson.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #059669; color: white;">🎬 Add Course Lesson</a>
+                <a href="admin.html" class="shortcut-btn action-btn" style="text-align: center; display: block; padding: 12px; text-decoration: none; background: #dc2626; color: white;">🛠️ System Admin Settings</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

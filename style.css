@@ -1,13 +1,10 @@
-/* ─────────────────────────────────────────────────────────────────────────────
-   GLOBAL STYLES & DYNAMIC VARIABLES
-   ────────────────────────────────────────────────────────────────────────── */
    :root {
     --radius: 16px;
     --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
     --border-alpha: rgba(0, 0, 0, 0.05);
 }
 
-/* 🎨 VIBRANT GRADIENT THEME DESIGN MAP */
+/* VIBRANT THEME DESIGN For the webpage */
 body[data-page="dashboard"] {
     --bg-main: #f4f6fa;          /* Sleek, clean light-grey canvas */
     --accent-theme: #7c3aed;     /* Creative Purple */
@@ -105,7 +102,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   SIDEBAR & BRANDING ONLY SHOWS "STEM"
+   SIDEBAR 
    ────────────────────────────────────────────────────────────────────────── */
    .sidebar {
     width: 260px;
@@ -177,7 +174,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   MAIN CONTAINER CANVAS
+   MAIN CONTAINER 
    ────────────────────────────────────────────────────────────────────────── */
 .main {
     margin-left: 260px;
@@ -194,7 +191,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   🌟 METRICS GRID CONFIGURATION
+   METRICS GRID CONFIGURATION
    ────────────────────────────────────────────────────────────────────────── */
 .metrics-grid {
     display: grid;
@@ -299,7 +296,7 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   🌟 WATERPROOF MULTI-ROW FLEX LAYOUT FOR FORMS
+   MULTI-ROW FLEX LAYOUT FOR FORMS
    ────────────────────────────────────────────────────────────────────────── */
 form {
     display: flex;
@@ -319,10 +316,8 @@ form {
     min-width: 200px;
 }
 
-/* ── ROW 1 WRAPPING TRICK ── */
-/* Targets the "Show" button container to break to a new row immediately after it */
 form button:not([type="submit"]):not(.edit):not(.delete) {
-    flex: 0 1 100px; /* Snug fit for the password utility trigger box */
+    flex: 0 1 100px; /* for the password utility trigger box */
     height: 46px;
     margin-right: auto; /* Forces any remaining empty space to the right side */
 }
@@ -339,7 +334,7 @@ form button:not([type="submit"]):not(.edit):not(.delete)::after {
 /* ── ROW 2 & ADD STUDENT CORNER ALIGNMENT ── */
 form button[type="submit"],
 form button:last-of-type {
-    margin-left: auto; /* Magically forces the action button to lock to the absolute bottom-right corner */
+    margin-left: auto; /* Mforces the action button to lock to the absolute bottom-right corner */
     flex: 0 0 auto;
     min-width: 180px;
     height: 46px;

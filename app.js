@@ -28,7 +28,6 @@ async function apiPost(table, action, data) {
     }
 }
 
-// ─── UI NOTIFICATIONS ────────────────────────────────────────────────────────
 function showMessage(msg, isError = false) {
     let box = document.getElementById("msg-box");
     if (!box) {
@@ -224,7 +223,7 @@ async function deleteTeacher(id) {
     loadTeachers();
 }
 
-// ─── ADMINS CONTROLLER MANAGEMENT MODULE ───────────────────────────────────
+// ─── ADMINS CONTROLLER ───────────
 async function loadAdmins() {
     const data = await apiGet("admins");
     const tbody = document.getElementById("admins-tbody"); // Matches your HTML
@@ -232,7 +231,7 @@ async function loadAdmins() {
 
     tbody.innerHTML = "";
     data.forEach(a => {
-        // Stringify and escape quotes to keep the onclick valid
+        
         const safeData = JSON.stringify(a).replace(/"/g, '&quot;');
         
         tbody.innerHTML += `
@@ -258,7 +257,7 @@ async function submitAdminForm(e) {
         adminName: document.getElementById("admin-name").value,
         email: document.getElementById("admin-email").value,
         pwd: document.getElementById("admin-pwd").value,
-        // MUST match the ID in your HTML <select id="admin-access">
+        
         accessLevel: document.getElementById("admin-access").value 
     };
 
@@ -443,13 +442,13 @@ function editCourse(course) {
     document.getElementById("course-code")
         .setAttribute("disabled", "true");
 
-    // Scroll to top smoothly
+    
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 
-    // Optional success message
+    
     showMessage("Editing course...");
 }
 
@@ -709,7 +708,7 @@ async function populateEnrollmentDropdown(selectId) {
     }
 }
 
-// ─── CERTIFICATES CONTROLLER (DATA VIEW ONLY) ───────────────────────────────
+// ─── CERTIFICATES CONTROLLER  ────────────────────────
 async function loadCertificates() {
     const data = await apiGet("certificates", "get");
     const tbody = document.getElementById("certificates-tbody");
@@ -764,7 +763,6 @@ async function deleteCertificate(id) {
 }
 
 // ─── DASHBOARD CONTROLLER ───────────────────────────────────────────────────
-// ─── SAFE DASHBOARD CONTROLLER ───────────────────────────────────────────────
 async function loadDashboardMetrics() {
     const response = await apiGet("dashboard", "metrics");
     
@@ -791,7 +789,6 @@ async function loadDashboardMetrics() {
 
     recentList.innerHTML = "";
     
-    // Check both variations of the backend response array key to maintain complete compatibility
     const activityData = response.recentEnrollments || response.recentActivity;
 
     if (!activityData || activityData.length === 0) {

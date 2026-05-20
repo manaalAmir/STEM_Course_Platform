@@ -1,5 +1,4 @@
 <?php
-// ───────────────── HEADERS & CORS CONFIG ─────────────────
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
@@ -84,7 +83,6 @@ function recalculateEnrollment($conn, $enrollmentID) {
     mysqli_stmt_execute($updateStmt);
 }
 
-// Normalize matching parameter in case your JS requests just "table=dashboard" without an action parameter
 $routeKey = "$table:$action";
 if ($table === 'dashboard' && empty($action)) {
     $routeKey = "dashboard:metrics";
@@ -637,7 +635,7 @@ switch ($routeKey) {
         $enrollmentsRow  = mysqli_fetch_assoc($enrollmentsQuery);
         $certificatesRow = mysqli_fetch_assoc($certificatesQuery);
 
-        // 2. Fetch the 5 most recent platform activities (Fixed: Grabbed selection datetime)
+        // 2. Fetch the 5 most recent platform activities 
         $activityFeed = mysqli_query($conn, "
             SELECT e.enrollmentID, e.enrollmentDate, s.studentName, c.title AS courseTitle 
             FROM enrollments e
@@ -649,7 +647,6 @@ switch ($routeKey) {
         
         $recentActivityList = mysqli_fetch_all($activityFeed, MYSQLI_ASSOC);
 
-        // 3. Dispatch unified dashboard data packet match (Fixed key string mapping mismatch)
         respond([
             "counts" => [
                 "students"     => intval($studentsRow['total']),

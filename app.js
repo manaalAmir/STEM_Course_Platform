@@ -75,7 +75,7 @@ async function populateDropdown(selectId, table, valueKey, labelKey, placeholder
     }
 }
 
-// ─── STUDENTS CONTROLLER ────────────────────────────────────────────────────
+// =================== STUDENTS ==========================
 async function loadStudents() {
     const data = await apiGet("students");
     const tbody = document.getElementById("students-tbody");
@@ -149,7 +149,7 @@ function editStudent(s) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── TEACHERS CONTROLLER ────────────────────────────────────────────────────
+// =============================TEACHERS ====================================
 async function loadTeachers() {
     const data = await apiGet("teachers");
     const tbody = document.getElementById("teachers-tbody");
@@ -223,10 +223,10 @@ async function deleteTeacher(id) {
     loadTeachers();
 }
 
-// ─── ADMINS CONTROLLER ───────────
+// ========================= ADMINS ===========================
 async function loadAdmins() {
     const data = await apiGet("admins");
-    const tbody = document.getElementById("admins-tbody"); // Matches your HTML
+    const tbody = document.getElementById("admins-tbody"); 
     if (!tbody) return;
 
     tbody.innerHTML = "";
@@ -294,7 +294,7 @@ async function deleteAdmin(id) {
     loadAdmins();
 }
 
-// ─── COURSES CONTROLLER ─────────────────────────────────────────────────────
+// ============================= COURSES ========================================
 async function loadCourses() {
     const data = await apiGet("courses");
     const tbody = document.getElementById("courses-tbody");
@@ -460,7 +460,7 @@ async function deleteCourse(code) {
     loadCourses();
 }
 
-// ─── LESSONS CONTROLLER ─────────────────────────────────────────────────────
+// ============================= LESSONS ===============================
 async function loadLessons() {
     const data = await apiGet("lessons");
     const tbody = document.getElementById("lessons-tbody");
@@ -533,7 +533,7 @@ async function deleteLesson(id) {
     loadLessons();
 }
 
-// ─── ENROLLMENTS CONTROLLER ──────────────────────────────────────────────────
+// ============================= ENROLLMENTS ==================================
 async function loadEnrollments() {
     const data = await apiGet("enrollments");
     const tbody = document.getElementById("enrollments-tbody");
@@ -542,7 +542,6 @@ async function loadEnrollments() {
     tbody.innerHTML = "";
     
     data.forEach(e => {
-        // Build the row with the missing percentage and grade fields
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>#${e.enrollmentID}</td>
@@ -619,7 +618,7 @@ async function deleteEnrollment(id) {
     loadEnrollments();
 }
 
-// ─── LESSON PROGRESS CONTROLLER ──────────────────────────────────────────────
+// ============================= LESSON PROGRESS ===================================
 async function loadLessonProgress() {
     const data = await apiGet("progress");
     const tbody = document.getElementById("progress-tbody");
@@ -708,7 +707,7 @@ async function populateEnrollmentDropdown(selectId) {
     }
 }
 
-// ─── CERTIFICATES CONTROLLER  ────────────────────────
+// =================================== CERTIFICATES ================================
 async function loadCertificates() {
     const data = await apiGet("certificates", "get");
     const tbody = document.getElementById("certificates-tbody");
@@ -762,7 +761,7 @@ async function deleteCertificate(id) {
     loadCertificates();
 }
 
-// ─── DASHBOARD CONTROLLER ───────────────────────────────────────────────────
+// ======================================= DASHBOARD ==================================
 async function loadDashboardMetrics() {
     const response = await apiGet("dashboard", "metrics");
     

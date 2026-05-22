@@ -23,7 +23,7 @@ if (!$conn) {
     exit;
 }
 
-// ───────────────── PARAMETERS & INPUT PARSING ─────────────────
+// ───────────────── PARAMETERS & INPUT  ─────────────────
 $action = $_GET['action'] ?? '';
 $table  = $_GET['table']  ?? '';
 $body   = json_decode(file_get_contents("php://input"), true) ?? [];
@@ -91,7 +91,7 @@ if ($table === 'dashboard' && empty($action)) {
 // ───────────────── REQUEST ROUTER ─────────────────
 switch ($routeKey) {
 
-    // ================= STUDENTS MODULE =================
+    // ================= STUDENTS =================
     case "students:get":
         $res = mysqli_query($conn, "SELECT studentID, studentName, email, dob, gender, registrationDate FROM students ORDER BY studentID ASC");
         respond(mysqli_fetch_all($res, MYSQLI_ASSOC));
@@ -136,7 +136,7 @@ switch ($routeKey) {
         }
         break;
 
-    // ================= TEACHERS MODULE =================
+    // ================= TEACHERS =================
     case "teachers:get":
         $res = mysqli_query($conn, "SELECT teacherID, teacherName, email, subjectName, hireDate FROM teachers ORDER BY teacherID ASC");
         respond(mysqli_fetch_all($res, MYSQLI_ASSOC));
@@ -181,7 +181,7 @@ switch ($routeKey) {
         }
         break;
 
-    // ================= ADMINS MODULE =================
+    // ================= ADMINS =================
     case "admins:get":
         $res = mysqli_query($conn, "SELECT adminID, adminName, email, accessLevel, createdAt FROM administrators ORDER BY adminID ASC");
         if (!$res) {
@@ -229,7 +229,7 @@ switch ($routeKey) {
         }
         break;
 
-    // ================= COURSES MODULE =================
+    // ================= COURSES =================
     case "courses:get":
 
         $res = mysqli_query($conn, "
@@ -297,7 +297,7 @@ switch ($routeKey) {
         respond(mysqli_stmt_execute($stmt) ? ["success" => true] : ["error" => mysqli_error($conn)]);
         break;
 
-    // ================= LESSONS MODULE =================
+    // ================= LESSONS =================
     case "lessons:get":
         $res = mysqli_query($conn, "
             SELECT l.lessonID, l.lessonNum, l.lessonTitle, l.lessonDescription, l.contentType, l.durationInMinutes, l.courseCode, c.title AS courseTitle 
@@ -376,7 +376,7 @@ switch ($routeKey) {
         }
         break;
 
-    // ================= ENROLLMENTS MODULE =================
+    // ================= ENROLLMENTS =================
     case "enrollments:get":
 
         $res = mysqli_query($conn, "
@@ -448,7 +448,7 @@ switch ($routeKey) {
         }
         break;
 
-    // ================= LESSON PROGRESS MODULE =================
+    // ================= LESSON PROGRESS =================
     case "progress:get":
         $res = mysqli_query($conn, "
             SELECT p.progressID, p.isCompleted, p.completedAt, p.score, p.timeSpentMinutes, p.enrollmentID, p.lessonID,
@@ -522,7 +522,7 @@ switch ($routeKey) {
         }
         break;
 
-    // ================= CERTIFICATES MODULE =================
+    // ================= CERTIFICATES =================
     case "certificates:get":
         $res = mysqli_query($conn, "
             SELECT 
@@ -620,9 +620,9 @@ switch ($routeKey) {
         respond(mysqli_stmt_execute($stmt) ? ["success" => true] : ["error" => mysqli_error($conn)]);
         break;
 
-    // ================= DASHBOARD SUMMARY MODULE =================
+    // ================= DASHBOARD SUMMARY =================
     case "dashboard:metrics":
-        // 1. Fetch total item count statistics (Fixed: Included missing teachers entity tally)
+        // 1. Fetch total item count statistics 
         $studentsQuery     = mysqli_query($conn, "SELECT COUNT(*) AS total FROM students");
         $coursesQuery      = mysqli_query($conn, "SELECT COUNT(*) AS total FROM courses");
         $teachersQuery     = mysqli_query($conn, "SELECT COUNT(*) AS total FROM teachers");

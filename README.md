@@ -221,3 +221,4 @@ STEM_Course_Platform/
 - Group Number: 12
 - Name: Manaal Amir
 - Roll No: 24P-0512
+- Github URL: https://github.com/manaalAmir/STEM_Course_Platform
